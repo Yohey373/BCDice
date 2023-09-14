@@ -58,3 +58,77 @@ rands = [
   { sides = 6, value = 1 }
   { sides = 6, value = 6 }
 ]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [4,6] ＞ 6 ＞ 完全成功"
+success = true
+rands = [
+  { sides = 6, value = 4 }
+  { sides = 6, value = 6 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [4,4] ＞ 4 ＞ 部分的成功"
+rands = [
+  { sides = 6, value = 4 }
+  { sides = 6, value = 4 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [3,5] ＞ 5 ＞ 部分的成功"
+rands = [
+  { sides = 6, value = 3 }
+  { sides = 6, value = 5 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [1,2] ＞ 2 ＞ 失敗"
+rands = [
+  { sides = 6, value = 1 }
+  { sides = 6, value = 2 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [6,6] ＞ 6 ＞ クリティカル"
+success = true
+critical = true
+rands = [
+  { sides = 6, value = 6 }
+  { sides = 6, value = 6 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2CO"
+output = "(CO) ＞ [6,6] ＞ 6 ＞ クリティカル"
+success = true
+critical = true
+rands = [
+  { sides = 6, value = 6 }
+  { sides = 6, value = 6 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "6CO"
+output = "(CO) ＞ [1,5,4,6,3,6,] ＞ 6 ＞ クリティカル"
+success = true
+critical = true
+rands = [
+  { sides = 6, value = 1 }
+  { sides = 6, value = 5 }
+  { sides = 6, value = 4 }
+  { sides = 6, value = 6 }
+  { sides = 6, value = 3 }
+  { sides = 6, value = 6 }
+]
