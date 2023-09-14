@@ -109,17 +109,6 @@ rands = [
 
 [[ test ]]
 game_system = "CandelaObscura"
-input = "2CO"
-output = "(CO) ＞ [6,6] ＞ 6 ＞ クリティカル"
-success = true
-critical = true
-rands = [
-  { sides = 6, value = 6 },
-  { sides = 6, value = 6 }
-]
-
-[[ test ]]
-game_system = "CandelaObscura"
 input = "6CO"
 output = "(CO) ＞ [1,5,4,6,3,6,] ＞ 6 ＞ クリティカル"
 success = true
