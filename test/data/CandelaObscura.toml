@@ -166,7 +166,7 @@ rands = [
 [[ test ]]
 game_system = "CandelaObscura"
 input = "6CO"
-output = "(6CO) ＞ [1,5,6,6,3,6,] ＞ 6 ＞ クリティカル"
+output = "(6CO) ＞ [1,5,6,6,3,6] ＞ 6 ＞ クリティカル"
 success = true
 critical = true
 rands = [
@@ -238,7 +238,7 @@ rands = [
 [[ test ]]
 game_system = "CandelaObscura"
 input = "1GA"
-output = "(1GA) ＞ [1] ＞ 1 ＞ 失敗"
+output = "(1GA) ＞ [1] ＞ ☆1 ＞ ☆失敗"
 failure = true
 rands = [
   { sides = 6, value = 1 }
@@ -247,8 +247,7 @@ rands = [
 [[ test ]]
 game_system = "CandelaObscura"
 input = "2GA"
-output = "(2GA) ＞ [1,6] ＞ 6 ＞ 完全成功"
-success = true
+output = "(2GA) ＞ [1,6] ＞ ☆1 or 6 ＞ ☆失敗 or 完全成功"
 rands = [
   { sides = 6, value = 1 },
   { sides = 6, value = 6 }
@@ -256,15 +255,81 @@ rands = [
 
 [[ test ]]
 game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [6,1] ＞ ☆6 ＞ ☆完全成功"
+success = true
+rands = [
+  { sides = 6, value = 6 },
+  { sides = 6, value = 1 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [4,2] ＞ ☆4 ＞ ☆部分的成功"
+rands = [
+  { sides = 6, value = 4 },
+  { sides = 6, value = 2 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [2,4] ＞ ☆2 or 4 ＞ ☆失敗 or 部分的成功"
+rands = [
+  { sides = 6, value = 2 },
+  { sides = 6, value = 4 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [6,2] ＞ ☆6 ＞ ☆完全成功"
+success = true
+rands = [
+  { sides = 6, value = 6 },
+  { sides = 6, value = 2 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [2,6] ＞ ☆2 or 6 ＞ ☆失敗 or 完全成功"
+rands = [
+  { sides = 6, value = 2 },
+  { sides = 6, value = 6 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [6,4] ＞ ☆6 ＞ ☆完全成功"
+success = true
+rands = [
+  { sides = 6, value = 6 },
+  { sides = 6, value = 4 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
+input = "2GA"
+output = "(2GA) ＞ [4,6] ＞ ☆4 or 6 ＞ ☆部分的成功 or 完全成功"
+rands = [
+  { sides = 6, value = 4 },
+  { sides = 6, value = 6 }
+]
+
+[[ test ]]
+game_system = "CandelaObscura"
 input = "6GA"
-output = "(6GA) ＞ [1,5,6,6,3,6,] ＞ 6 ＞ クリティカル"
+output = "(6GA) ＞ [1,6,4,6,3,2,] ＞ ☆6 ＞ ☆クリティカル"
 success = true
 critical = true
 rands = [
   { sides = 6, value = 1 },
-  { sides = 6, value = 5 },
+  { sides = 6, value = 6 },
   { sides = 6, value = 4 },
   { sides = 6, value = 6 },
   { sides = 6, value = 3 },
-  { sides = 6, value = 6 }
+  { sides = 6, value = 2 }
 ]
