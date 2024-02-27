@@ -35,6 +35,21 @@ module BCDice
           m = /^(\d+)CO$/.match(command)
           return nil unless m
 
+          times = m[1].to_i
+          dice_list = @randomizer.roll_barabara(times, 6)
+
+          result =
+          if dice_list.count(6) >= 2
+            "クリティカル"
+          elsif dice_list.count(1) == times
+            "完全成功"
+          elsif total >= target
+            "部分的成功"
+          else
+            "失敗"
+          end
+
+          return "(#{command}) ＞ #{total}[#{dice_list.join(',')}] ＞ #{result}"
         end
 
       end
