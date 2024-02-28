@@ -41,15 +41,15 @@ module BCDice
           result =
           if dice_list.count(6) >= 2
             "クリティカル"
-          elsif dice_list.count(1) == times
+          elsif dice_list.max == 6
             "完全成功"
-          elsif total >= target
+          elsif dice_list.max >= 4
             "部分的成功"
           else
             "失敗"
           end
 
-          return "(#{command}) ＞ #{total}[#{dice_list.join(',')}] ＞ #{result}"
+          return "(#{command}) ＞ #{dice_list} ＞ #{dice_list.max} ＞ #{result}"
         end
 
       end
