@@ -27,7 +27,7 @@ module BCDice
   
         def eval_game_system_specific_command(command)
           return roll_co(command)
-          
+          return roll_ga(command)
         end
 
         private
@@ -50,6 +50,10 @@ module BCDice
             "失敗"
           end
 
+          return "(#{command}) ＞ #{dice_list} ＞ #{dice_list.max} ＞ #{result}"
+        end
+
+        def roll_ga(command)
           return "(#{command}) ＞ #{dice_list} ＞ #{dice_list.max} ＞ #{result}"
         end
 
