@@ -23,10 +23,11 @@ module BCDice
           　n個のダイスを振り、1つ目のダイスの結果と最も大きいダイスの結果を表示します。
         INFO_MESSAGE_TEXT
   
-        register_prefix('\d+CO')
+        register_prefix('\d+CO', '\d+GA')
   
         def eval_game_system_specific_command(command)
           return roll_co(command)
+          
         end
 
         private
