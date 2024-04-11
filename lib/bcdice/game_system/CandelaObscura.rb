@@ -26,8 +26,11 @@ module BCDice
         register_prefix('\d+CO', '\d+GA')
   
         def eval_game_system_specific_command(command)
-          return roll_co(command)
-          return roll_ga(command)
+          case command
+          when /CO/i
+            return roll_co(command)
+          when /GA/i
+            return roll_ga(command)
         end
 
         private
